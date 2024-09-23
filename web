@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Only Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+    </style>
+    <script>
+        function isMobileDevice() {
+            const userAgentIsMobile = /Mobi|Android|iPhone|iPad|iPod|Windows Phone|BlackBerry/i.test(navigator.userAgent);
+            const screenWidthIsMobile = window.innerWidth <= 768;
+            return userAgentIsMobile && screenWidthIsMobile;
+        }
+
+        if (!isMobileDevice()) {
+            // Chuyển hướng đến trang chặn nếu không phải là thiết bị di động
+            window.location.href = 'https://yourwebsite.com/blocked'; // Thay thế bằng URL trang chặn của bạn
+        }
+    </script>
+</head>
+<body>
+    <h1>Chào mừng bạn đến với trang web dành cho di động!</h1>
+    <p>Trang web này chỉ hỗ trợ trên thiết bị di động.</p>
+</body>
+</html>  
